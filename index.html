@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraria Figurines | Коллекционные фигурки</title>
+    <style>
+        :root {
+            --black: #111111;
+            --white: #f8f8f8;
+            --gray: #e0e0e0;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfAZ9hiA.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiA.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiA.woff2') format('woff2');
+        }
+
+        header {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom-left-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            letter-spacing: -0.05rem;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03rem;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product {
+            background-color: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+            .product:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .product img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: var(--radius);
+                margin-bottom: 1rem;
+            }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--black);
+            margin: 1rem 0;
+        }
+
+        .model-container {
+            height: 500px;
+            background-color: var(--gray);
+            border-radius: var(--radius);
+            margin: 3rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .model-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+
+            .model-placeholder p {
+                margin-bottom: 1rem;
+                font-weight: 300;
+            }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: #333;
+            }
+
+        .order-form {
+            background-color: var(--gray);
+            padding: 2rem;
+            border-radius: var(--radius);
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: var(--radius);
+            font-family: inherit;
+        }
+
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            border-top-left-radius: var(--radius);
+            border-top-right-radius: var(--radius);
+        }
+
+        .contacts {
+            margin-top: 1rem;
+        }
+
+            .contacts a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+                .contacts a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Terraria Figurines</h1>
+            <p>Коллекционные фигурки из мира Terraria</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Наши товары</h2>
+        <div class="products">
+            <div class="product">
+                <img src="eye-of-cthulhu.jpg" alt="Глаз Ктулху">
+                <h3>Глаз Ктулху</h3>
+                <p>Легендарный босс Terraria в виде детализированной фигурки высотой 15 см. Фигурка выполнена из высококачественного ПВХ с точной проработкой всех деталей.</p>
+                <div class="price">2,499 ₽</div>
+                <button class="btn">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="skeletron.jpg" alt="Скелетрон">
+                <h3>Скелетрон</h3>
+                <p>Устрашающий босс из Terraria в виде фигурки высотой 20 см. Особое внимание уделено проработке костной структуры и анимации.</p>
+                <div class="price">2,999 ₽</div>
+                <button class="btn">Добавить в корзину</button>
+            </div>
+
+            <div class="product">
+                <img src="Снимок экрана 2025-06-25 121107.jpg" alt="Король слизней">
+                <h3>Король слизней</h3>
+                <p>Массивная фигурка Короля слизней высотой 18 см с прозрачными элементами, имитирующими слизь. В комплекте мини-фигурка ниндзя.</p>
+                <div class="price">2,199 ₽</div>
+                <button class="btn">Добавить в корзину</button>
+            </div>
+        </div>
+
+        <h2>3D-просмотр фигурки</h2>
+        <div class="model-container">
+            <div class="model-placeholder">
+                <p>Здесь будет интерактивная 3D-модель фигурки</p>
+                <p>Для интеграции используйте библиотеку Three.js или аналогичную</p>
+                <button class="btn">Загрузить 3D-модель</button>
+            </div>
+        </div>
+
+        <h2>Форма заказа</h2>
+        <form class="order-form">
+            <div class="form-group">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="product">Выберите товар</label>
+                <select id="product">
+                    <option value="eye">Глаз Ктулху - 1,199 ₽</option>
+                    <option value="skeletron">Скелетрон - 2,999 ₽</option>
+                    <option value="slime">Король слизней - 799 ₽</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Дополнительная информация</label>
+                <textarea id="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Оформить заказ</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Terraria Figurines © 2023</p>
+            <div class="contacts">
+                <p>Свяжитесь с нами:</p>
+                <p>
+                    Телеграм:
+                    <a href="https://t.me/MaximKa_Y">@MaximKa_Y</a>,
+                    <a href="https://t.me/Veenroc">@Veenroc</a>,
+                    <a href="https://t.me/VsevolodtheNovokshonov">@VsevolodtheNovokshonov</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.min.js"></script>
+    <script>
+        // Инициализация сцены
+        const container = document.querySelector('.model-container');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xf0f0f0); // Серый фон
+
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            container.clientWidth / container.clientHeight,
+            0.1,
+            1000
+        );
+        camera.position.z = 50;
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.innerHTML = '';
+        container.appendChild(renderer.domElement);
+
+        // Освещение
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(0, 1, 1);
+        scene.add(directionalLight);
+
+        // Загрузка STL модели
+        const loader = new THREE.STLLoader();
+        loader.load(
+            'skeletron.stl', // Укажите правильный путь к файлу
+            function (geometry) {
+                const material = new THREE.MeshPhongMaterial({
+                    color: 0xaaaaaa,
+                    specular: 0x111111,
+                    shininess: 200
+                });
+
+                const mesh = new THREE.Mesh(geometry, material);
+
+                // Центрирование модели
+                geometry.computeBoundingBox();
+                const boundingBox = geometry.boundingBox;
+                const center = new THREE.Vector3();
+                boundingBox.getCenter(center);
+                mesh.position.sub(center);
+
+                // Масштабирование
+                const size = boundingBox.getSize(new THREE.Vector3());
+                const maxDim = Math.max(size.x, size.y, size.z);
+                const scale = 20 / maxDim;
+                mesh.scale.set(scale, scale, scale);
+
+                scene.add(mesh);
+            },
+            (xhr) => {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+            },
+            (error) => {
+                console.error('Error loading STL model', error);
+            }
+        );
+
+        // Управление
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.25;
+
+        // Анимация
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Реакция на изменение размера
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+    </script>
+</body>
+</html>

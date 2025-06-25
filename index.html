@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOIDA | Фигурки Terraria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">GOIDA</a>
+
+                <nav class="nav">
+                    <a href="#about" class="nav__link">О нас</a>
+                    <a href="#products" class="nav__link">Товары</a>
+                    <a href="#models" class="nav__link">3D Модели</a>
+                    <a href="#order" class="nav__link">Заказ</a>
+                    <a href="admin.html" class="nav__link admin-link">Админ</a>
+                </nav>
+
+                <div class="lang-switcher">
+                    <select id="langSelect" class="lang-select">
+                        <option value="ru">RU</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="about" class="about section">
+            <div class="container">
+                <h1 class="about__title section-title">Интернет магазин фигурок "Сделай сам" по игре Terraria</h1>
+                <p class="about__text">Создавайте уникальные коллекционные фигурки персонажей Terraria своими руками. Наши наборы включают все необходимое для сборки и покраски.</p>
+            </div>
+        </section>
+
+        <section class="banner section">
+            <div class="container">
+                <div class="banner__content">
+                    <h2 class="banner__title">НОВАЯ КОЛЛЕКЦИЯ</h2>
+                    <p class="banner__text">Ограниченный выпуск фигурок боссов Terraria с мельчайшими деталями</p>
+                    <a href="#products" class="btn">Смотреть коллекцию</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products section">
+            <div class="container">
+                <h2 class="section-title">Наши товары</h2>
+                <div class="products__grid" id="productsGrid">
+                    <!-- Товары загружаются из JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="models" class="models section">
+            <div class="container">
+                <h2 class="section-title">3D Модели</h2>
+                <div class="models__grid">
+                    <div class="model-card" id="model1">
+                        <div class="model-viewer"></div>
+                        <h3 class="model-title">Глаз Ктулху</h3>
+                        <p class="model-desc">Первая модель из коллекции боссов</p>
+                    </div>
+                    <div class="model-card" id="model2">
+                        <div class="model-viewer"></div>
+                        <h3 class="model-title">Скелетрон</h3>
+                        <p class="model-desc">Легендарный босс подземелья</p>
+                    </div>
+                    <div class="model-card" id="model3">
+                        <div class="model-viewer"></div>
+                        <h3 class="model-title">Король слизней</h3>
+                        <p class="model-desc">2D стенд</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order section">
+            <div class="container">
+                <h2 class="section-title">Оформление заказа</h2>
+                <form class="order-form" id="orderForm">
+                    <div class="form-group">
+                        <label for="orderName">Ваше имя</label>
+                        <input type="text" id="orderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderEmail">Email</label>
+                        <input type="email" id="orderEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPhone">Телефон</label>
+                        <input type="tel" id="orderPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderAddress">Адрес доставки</label>
+                        <textarea id="orderAddress" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderProduct">Выберите товар</label>
+                        <select id="orderProduct" required>
+                            <option value="">-- Выберите товар --</option>
+                            <!-- ����� ����������� �� JS -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Оформить заказ</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__col">
+                    <h3>Контакты</h3>
+                    <p>Email: info@goida-terraria.com</p>
+                    <p>Телефон: +7 (923) 456-77-03</p>
+                </div>
+                <div class="footer__col">
+                    <h3>Telegram</h3>
+                    <a href="https://t.me/MaximKa_Y" target="_blank">@MaximKa_Y</a>
+                    <a href="https://t.me/Veenroc" target="_blank">@Veenroc</a>
+                    <a href="https://t.me/VsevolodtheNovokshonov" target="_blank">@VsevolodtheNovokshonov</a>
+                </div>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2025 GOIDA. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/three-loader.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/three-loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

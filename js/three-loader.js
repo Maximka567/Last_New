@@ -1,4 +1,4 @@
-// Θνθφθΰλθηΰφθÿ Three.js ρφεν
+// ΓΓ­Γ¨Γ¶Γ¨Γ Γ«Γ¨Γ§Γ Γ¶Γ¨ΓΏ Three.js Γ±Γ¶Γ¥Γ­
 const scenes = {};
 const cameras = {};
 const renderers = {};
@@ -13,14 +13,14 @@ function initAllModelViewers() {
 function initModelViewer(modelId) {
     const container = document.getElementById(modelId).querySelector('.model-viewer');
 
-    // Ρφενΰ
+    // Γ‘Γ¶Γ¥Γ­Γ 
     scenes[modelId] = new THREE.Scene();
     scenes[modelId].background = new THREE.Color(0xf0f0f0);
 
-    // Κΰμεπΰ
+    // ΓΓ Γ¬Γ¥Γ°Γ 
     cameras[modelId] = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     cameras[modelId].position.z = 5;
 
-    // Πενδεπεπ
+    // ΓΓ¥Γ­Γ¤Γ¥Γ°Γ¥Γ°
     renderers[modelId] = new THREE.WebGLRenderer({ antialias: true });
     renderers[modelId].setSize(container.clientWidth

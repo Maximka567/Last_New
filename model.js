@@ -19,7 +19,7 @@ loader.load('model.stl', function(geometry) {
     // Настраиваем камеру
     const size = geometry.boundingBox.getSize(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z);
-    const fov = camera.fov * (Math.PI / 180);
+    const fov = camera.fov * (Math.PI / 90);
     const distance = Math.abs(maxDim / Math.sin(fov / 2));
     
     camera.position.set(distance, distance * 0.5, distance);
